@@ -21,14 +21,9 @@ class RCSUnitTextField : RCSTextField {
             zeroMeasurement()
         }
     }
-//    var dismissButtonColor = UIColor.blue
-//    var unitDelegate : RCSUnitTextFieldDelegate?
-//    var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
-//    public private(set) var measurement : Measurement<Unit>
     
     private var unitString : String
     private var suffixString : String
-//    static let nForm = NumberFormatter()
 
     required init?(coder aDecoder: NSCoder) {
         unitString = measUnit.symbol
@@ -40,25 +35,6 @@ class RCSUnitTextField : RCSTextField {
         text = text! + suffixString
     }
     
-//    override var delegate: UITextFieldDelegate? {
-//        get {
-//            return nil
-//        }
-//        set {}
-//    }
-//    
-//    
-//    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-//        switch action {
-//        case #selector(UIResponderStandardEditActions.cut(_:)):
-//            return false
-//        case #selector(UIResponderStandardEditActions.paste(_:)):
-//            return false
-//        default:
-//            return super.canPerformAction(action, withSender: sender)
-//        }
-//    }
-
     //MARK:- TextField Delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -78,7 +54,6 @@ class RCSUnitTextField : RCSTextField {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         textField.selectedTextRange = pointRangeFromEnd(offset: -suffixString.characters.count)
     }
     

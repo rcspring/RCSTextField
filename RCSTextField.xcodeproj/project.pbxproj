@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC0060D31E9582D90021F9D3 /* RCSQuantityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060D01E9582D90021F9D3 /* RCSQuantityTextField.swift */; };
+		EC0060D41E9582D90021F9D3 /* RCSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060D11E9582D90021F9D3 /* RCSTextField.swift */; };
+		EC0060D51E9582D90021F9D3 /* RCSUnitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060D21E9582D90021F9D3 /* RCSUnitTextField.swift */; };
 		ECA7A3151E94CEA20000114D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3141E94CEA20000114D /* AppDelegate.swift */; };
 		ECA7A3171E94CEA20000114D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3161E94CEA20000114D /* ViewController.swift */; };
 		ECA7A31A1E94CEA20000114D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A3181E94CEA20000114D /* Main.storyboard */; };
 		ECA7A31C1E94CEA20000114D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31B1E94CEA20000114D /* Assets.xcassets */; };
 		ECA7A31F1E94CEA20000114D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31D1E94CEA20000114D /* LaunchScreen.storyboard */; };
-		ECA7A3271E94CEDD0000114D /* RCSUnitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3261E94CEDD0000114D /* RCSUnitTextField.swift */; };
-		ECA7A3291E94E8EC0000114D /* RCSQuantityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3281E94E8EC0000114D /* RCSQuantityTextField.swift */; };
-		ECA7A32B1E952F190000114D /* RCSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A32A1E952F190000114D /* RCSTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ECA7A3111E94CEA20000114D /* unitTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unitTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC0060D01E9582D90021F9D3 /* RCSQuantityTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSQuantityTextField.swift; sourceTree = "<group>"; };
+		EC0060D11E9582D90021F9D3 /* RCSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSTextField.swift; sourceTree = "<group>"; };
+		EC0060D21E9582D90021F9D3 /* RCSUnitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSUnitTextField.swift; sourceTree = "<group>"; };
+		ECA7A3111E94CEA20000114D /* RCSTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCSTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA7A3141E94CEA20000114D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA7A3161E94CEA20000114D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ECA7A3191E94CEA20000114D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECA7A31B1E94CEA20000114D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA7A31E1E94CEA20000114D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA7A3201E94CEA20000114D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ECA7A3261E94CEDD0000114D /* RCSUnitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSUnitTextField.swift; sourceTree = "<group>"; };
-		ECA7A3281E94E8EC0000114D /* RCSQuantityTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSQuantityTextField.swift; sourceTree = "<group>"; };
-		ECA7A32A1E952F190000114D /* RCSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,10 +41,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC0060CF1E9582D90021F9D3 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				EC0060D01E9582D90021F9D3 /* RCSQuantityTextField.swift */,
+				EC0060D11E9582D90021F9D3 /* RCSTextField.swift */,
+				EC0060D21E9582D90021F9D3 /* RCSUnitTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		ECA7A3081E94CEA20000114D = {
 			isa = PBXGroup;
 			children = (
-				ECA7A3131E94CEA20000114D /* unitTextField */,
+				ECA7A3131E94CEA20000114D /* RCSTextField */,
 				ECA7A3121E94CEA20000114D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,33 +62,31 @@
 		ECA7A3121E94CEA20000114D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ECA7A3111E94CEA20000114D /* unitTextField.app */,
+				ECA7A3111E94CEA20000114D /* RCSTextField.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ECA7A3131E94CEA20000114D /* unitTextField */ = {
+		ECA7A3131E94CEA20000114D /* RCSTextField */ = {
 			isa = PBXGroup;
 			children = (
-				ECA7A3281E94E8EC0000114D /* RCSQuantityTextField.swift */,
-				ECA7A3261E94CEDD0000114D /* RCSUnitTextField.swift */,
+				EC0060CF1E9582D90021F9D3 /* TextField */,
 				ECA7A3141E94CEA20000114D /* AppDelegate.swift */,
 				ECA7A3161E94CEA20000114D /* ViewController.swift */,
 				ECA7A3181E94CEA20000114D /* Main.storyboard */,
 				ECA7A31B1E94CEA20000114D /* Assets.xcassets */,
 				ECA7A31D1E94CEA20000114D /* LaunchScreen.storyboard */,
 				ECA7A3201E94CEA20000114D /* Info.plist */,
-				ECA7A32A1E952F190000114D /* RCSTextField.swift */,
 			);
-			path = unitTextField;
+			path = RCSTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ECA7A3101E94CEA20000114D /* unitTextField */ = {
+		ECA7A3101E94CEA20000114D /* RCSTextField */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ECA7A3231E94CEA20000114D /* Build configuration list for PBXNativeTarget "unitTextField" */;
+			buildConfigurationList = ECA7A3231E94CEA20000114D /* Build configuration list for PBXNativeTarget "RCSTextField" */;
 			buildPhases = (
 				ECA7A30D1E94CEA20000114D /* Sources */,
 				ECA7A30E1E94CEA20000114D /* Frameworks */,
@@ -88,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = unitTextField;
+			name = RCSTextField;
 			productName = unitTextField;
-			productReference = ECA7A3111E94CEA20000114D /* unitTextField.app */;
+			productReference = ECA7A3111E94CEA20000114D /* RCSTextField.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +118,7 @@
 					};
 				};
 			};
-			buildConfigurationList = ECA7A30C1E94CEA20000114D /* Build configuration list for PBXProject "unitTextField" */;
+			buildConfigurationList = ECA7A30C1E94CEA20000114D /* Build configuration list for PBXProject "RCSTextField" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,7 +131,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ECA7A3101E94CEA20000114D /* unitTextField */,
+				ECA7A3101E94CEA20000114D /* RCSTextField */,
 			);
 		};
 /* End PBXProject section */
@@ -146,11 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA7A3271E94CEDD0000114D /* RCSUnitTextField.swift in Sources */,
-				ECA7A3291E94E8EC0000114D /* RCSQuantityTextField.swift in Sources */,
+				EC0060D31E9582D90021F9D3 /* RCSQuantityTextField.swift in Sources */,
 				ECA7A3171E94CEA20000114D /* ViewController.swift in Sources */,
+				EC0060D41E9582D90021F9D3 /* RCSTextField.swift in Sources */,
 				ECA7A3151E94CEA20000114D /* AppDelegate.swift in Sources */,
-				ECA7A32B1E952F190000114D /* RCSTextField.swift in Sources */,
+				EC0060D51E9582D90021F9D3 /* RCSUnitTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +284,7 @@
 				DEVELOPMENT_TEAM = UFR6Y7LN3Q;
 				INFOPLIST_FILE = unitTextField/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ryan-spring.unitTextField";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryan-spring.rcsTextField";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -289,7 +297,7 @@
 				DEVELOPMENT_TEAM = UFR6Y7LN3Q;
 				INFOPLIST_FILE = unitTextField/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ryan-spring.unitTextField";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ryan-spring.rcsTextField";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -298,7 +306,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ECA7A30C1E94CEA20000114D /* Build configuration list for PBXProject "unitTextField" */ = {
+		ECA7A30C1E94CEA20000114D /* Build configuration list for PBXProject "RCSTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ECA7A3211E94CEA20000114D /* Debug */,
@@ -307,13 +315,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ECA7A3231E94CEA20000114D /* Build configuration list for PBXNativeTarget "unitTextField" */ = {
+		ECA7A3231E94CEA20000114D /* Build configuration list for PBXNativeTarget "RCSTextField" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ECA7A3241E94CEA20000114D /* Debug */,
 				ECA7A3251E94CEA20000114D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

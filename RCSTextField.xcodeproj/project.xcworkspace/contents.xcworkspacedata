@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:unitTextField.xcodeproj">
+      location = "self:/Users/rcspring/Desktop/unitTextField/RCSTextField.xcodeproj">
    </FileRef>
 </Workspace>
