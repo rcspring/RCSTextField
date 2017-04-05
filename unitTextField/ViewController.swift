@@ -8,16 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, RCSUnitTextFieldDelegate {
+    
+    @IBOutlet var textField : RCSUnitTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textField.unitDelegate = self 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK:- RCSTextFieldDelegate
+    func textFieldDidComplete(field: RCSUnitTextField) {
+        print("Completed with \(field.measurement)")
+    }
+    
+    func textFieldValueDidChange(field: RCSUnitTextField) {
+         print("Changed with \(field.measurement)")
     }
 
 
