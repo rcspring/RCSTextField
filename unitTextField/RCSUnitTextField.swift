@@ -18,13 +18,14 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
     
     var measUnit : Unit = UnitMass.kilograms {
         didSet {
-        
+            zeroMeasurement()
         }
     }
     var dismissButtonColor = UIColor.blue
     var unitDelegate : RCSUnitTextFieldDelegate?
-    var measurement : Measurement<Unit>
-    
+    var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
+    public private(set) var measurement : Measurement<Unit> 
+        
     private var unitString : String
     private var suffixString : String
     static let nForm = NumberFormatter()
@@ -39,7 +40,7 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
         super.keyboardType = .decimalPad
         super.textAlignment = .right
         
-        super.inputAccessoryView = dismissButton()
+        
         
         text = text! + suffixString
         super.delegate = self
@@ -64,7 +65,7 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
         }
     }
 
-//    //MARK:- TextField Delegate
+    //MARK:- TextField Delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let textL = textField.text else {
@@ -83,7 +84,14 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
     }
     
     
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        super.inputAccessoryView = dismissButton()
+        
+        return true
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
         textField.selectedTextRange = pointRangeFromEnd(offset: -suffixString.characters.count)
     }
     
@@ -99,7 +107,7 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
     
     private func dismissButton()->UIView {
         let button = UIButton()
-        button.setTitle("DISMISS_DEFAULT_BUTTON", for: .normal)
+        button.setTitle(dismissButtonText, for: .normal)
         button.addTarget(self, action: #selector(RCSUnitTextField.buttonPushed(_:)), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
         button.backgroundColor = dismissButtonColor
@@ -133,6 +141,14 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
         let number = RCSUnitTextField.nForm.number(from: measurementQuantity)!
         measurement = Measurement(value: number.doubleValue, unit: measUnit)
         unitDelegate?.textFieldValueDidChange(field: self )
+    }
+    
+    private func zeroMeasurement() {
+        unitString = measUnit.symbol
+        suffixString = " " + unitString
+        measurement = Measurement(value: 0.0, unit: measUnit)
+        
+        text = suffixString
     }
     
     

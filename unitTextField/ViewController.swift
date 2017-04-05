@@ -15,7 +15,10 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.unitDelegate = self 
+        textField.unitDelegate = self
+        textField.measUnit = UnitVolume.milliliters
+        textField.dismissButtonText = "Dismiss"
+        textField.dismissButtonColor = UIColor.green
         // Do any additional setup after loading the view, typically from a nib.
     }
 
