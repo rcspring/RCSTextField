@@ -70,12 +70,12 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         super.inputAccessoryView = dismissButton()
-        
         return true
     }
     
     
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        configuration.valueDelegate?.fieldDidComplete(field: self)
     }
     
     //MARK:- Private Methods
@@ -83,11 +83,11 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
         let button = UIButton()
         button.setTitle(configuration.dismissButtonText, for: .normal)
         button.addTarget(self, action: #selector(RCSQuantityTextField.buttonPushed(_:)), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
+        button.frame = CGRect(x: 0, y: 0, width: self.window!.bounds.width, height: 50)
         button.backgroundColor = configuration.dismissButtonColor
         
         let view = UIView()
-        view.bounds = CGRect(x: 0, y: 0, width: 375, height: 50)
+        view.bounds = CGRect(x: 0, y: 0, width: self.window!.bounds.width, height: 50)
         view.addSubview(button)
         
         return view
