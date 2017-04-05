@@ -19,13 +19,20 @@ protocol RCSTextFieldDelegate {
     func fieldValueDidChange(field:RCSTextField)
 }
 
-class RCSTextField : UITextField, UITextFieldDelegate{
-    
+struct RCSTextFieldConfiguration {
     var dismissButtonColor = UIColor.blue
     var quantityDelegate : RCSTextFieldDelegate?
     var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
-    public internal(set) var value : RCSTextFieldValue
     var valueDelegate : RCSTextFieldDelegate?
+}
+
+class RCSTextField : UITextField, UITextFieldDelegate{
+    
+//    var dismissButtonColor = UIColor.blue
+//    var quantityDelegate : RCSTextFieldDelegate?
+//    var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
+    var configuration = RCSTextFieldConfiguration()
+    public internal(set) var value : RCSTextFieldValue
     
     static let nForm = NumberFormatter()
  
@@ -65,18 +72,16 @@ class RCSTextField : UITextField, UITextFieldDelegate{
     }
     
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-//        unitDelegate?.textFieldDidComplete(field:self)
-    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {    
     }
     
     //MARK:- Private Methods
     private func dismissButton()->UIView {
         let button = UIButton()
-        button.setTitle(dismissButtonText, for: .normal)
+        button.setTitle(configuration.dismissButtonText, for: .normal)
         button.addTarget(self, action: #selector(RCSQuantityTextField.buttonPushed(_:)), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
-        button.backgroundColor = dismissButtonColor
+        button.backgroundColor = configuration.dismissButtonColor
         
         let view = UIView()
         view.bounds = CGRect(x: 0, y: 0, width: 375, height: 50)

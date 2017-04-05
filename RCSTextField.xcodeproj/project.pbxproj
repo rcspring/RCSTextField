@@ -44,8 +44,8 @@
 		EC0060CF1E9582D90021F9D3 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				EC0060D01E9582D90021F9D3 /* RCSQuantityTextField.swift */,
 				EC0060D11E9582D90021F9D3 /* RCSTextField.swift */,
+				EC0060D01E9582D90021F9D3 /* RCSQuantityTextField.swift */,
 				EC0060D21E9582D90021F9D3 /* RCSUnitTextField.swift */,
 			);
 			path = TextField;
@@ -282,7 +282,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UFR6Y7LN3Q;
-				INFOPLIST_FILE = unitTextField/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RCSTextField/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryan-spring.rcsTextField";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,7 +295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UFR6Y7LN3Q;
-				INFOPLIST_FILE = unitTextField/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/RCSTextField/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ryan-spring.rcsTextField";
 				PRODUCT_NAME = "$(TARGET_NAME)";

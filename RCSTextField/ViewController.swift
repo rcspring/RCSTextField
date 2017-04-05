@@ -10,27 +10,22 @@ import UIKit
 
 class ViewController: UIViewController, RCSTextFieldDelegate {
     
-    @IBOutlet var textField : RCSUnitTextField!
+    @IBOutlet var unitField : RCSUnitTextField!
     @IBOutlet var quantityField : RCSQuantityTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.valueDelegate = self 
-        textField.measUnit = UnitVolume.milliliters
-        textField.dismissButtonText = "Dismiss"
-        textField.dismissButtonColor = UIColor.green
-//
-        quantityField.valueDelegate = self
-        quantityField.dismissButtonText = "Dismiss"
-        quantityField.dismissButtonColor = UIColor.red
+        var configuration = RCSTextFieldConfiguration()
+        configuration.dismissButtonColor = UIColor.gray
+        configuration.dismissButtonText = "Dismiss"
+        configuration.valueDelegate = self
+
+        unitField.measUnit = UnitVolume.milliliters
+        unitField.configuration = configuration
+        quantityField.configuration = configuration
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     //MARK:- RCSTextFieldDelegate 
     func fieldDidComplete(field: RCSTextField) {
         print("QCompleted with \(field.value)")

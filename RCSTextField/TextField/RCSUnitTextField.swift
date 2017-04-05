@@ -75,7 +75,7 @@ class RCSUnitTextField : RCSTextField {
         
         let number = RCSUnitTextField.nForm.number(from: measurementQuantity)!
         value = .measurment(Measurement(value: number.doubleValue, unit: measUnit))
-        valueDelegate?.fieldValueDidChange(field: self)
+        configuration.valueDelegate?.fieldValueDidChange(field: self)
     }
     
     private func zeroMeasurement() {
