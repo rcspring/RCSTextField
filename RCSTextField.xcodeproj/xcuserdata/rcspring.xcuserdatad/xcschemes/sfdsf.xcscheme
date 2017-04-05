@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ECA7A3101E94CEA20000114D"
-               BuildableName = "RCSTextField.app"
-               BlueprintName = "RCSTextField"
+               BlueprintIdentifier = "EC0060F31E9595430021F9D3"
+               BuildableName = "sfdsf.framework"
+               BlueprintName = "sfdsf"
                ReferencedContainer = "container:RCSTextField.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ECA7A3101E94CEA20000114D"
-            BuildableName = "RCSTextField.app"
-            BlueprintName = "RCSTextField"
-            ReferencedContainer = "container:RCSTextField.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ECA7A3101E94CEA20000114D"
-            BuildableName = "RCSTextField.app"
-            BlueprintName = "RCSTextField"
+            BlueprintIdentifier = "EC0060F31E9595430021F9D3"
+            BuildableName = "sfdsf.framework"
+            BlueprintName = "sfdsf"
             ReferencedContainer = "container:RCSTextField.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ECA7A3101E94CEA20000114D"
-            BuildableName = "RCSTextField.app"
-            BlueprintName = "RCSTextField"
+            BlueprintIdentifier = "EC0060F31E9595430021F9D3"
+            BuildableName = "sfdsf.framework"
+            BlueprintName = "sfdsf"
             ReferencedContainer = "container:RCSTextField.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
