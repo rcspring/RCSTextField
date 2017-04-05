@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, RCSUnitTextFieldDelegate {
+class ViewController: UIViewController, RCSUnitTextFieldDelegate, RCSQuantityTextFieldDelegate {
     
     @IBOutlet var textField : RCSUnitTextField!
+    @IBOutlet var quantityField : RCSQuantityTextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,10 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate {
         textField.measUnit = UnitVolume.milliliters
         textField.dismissButtonText = "Dismiss"
         textField.dismissButtonColor = UIColor.green
+        
+        quantityField.quantityDelegate = self
+        quantityField.dismissButtonText = "Dismiss"
+        quantityField.dismissButtonColor = UIColor.red
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -27,13 +32,22 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK:- RCSTextFieldDelegate
+    //MARK:- RCSUnitTextFieldDelegate
     func textFieldDidComplete(field: RCSUnitTextField) {
         print("Completed with \(field.measurement)")
     }
     
     func textFieldValueDidChange(field: RCSUnitTextField) {
          print("Changed with \(field.measurement)")
+    }
+    
+    //MARK:- RCSQuantityTextFieldDelegate 
+    func quantityFieldDidComplete(field: RCSQuantityTextField) {
+        print("QCompleted with \(field.quantity)")
+    }
+    
+    func quantityFieldValueDidChange(field: RCSQuantityTextField) {
+        print("Changed with \(field.quantity)")
     }
 
 

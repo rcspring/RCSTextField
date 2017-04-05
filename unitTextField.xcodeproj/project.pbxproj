@@ -13,6 +13,7 @@
 		ECA7A31C1E94CEA20000114D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31B1E94CEA20000114D /* Assets.xcassets */; };
 		ECA7A31F1E94CEA20000114D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31D1E94CEA20000114D /* LaunchScreen.storyboard */; };
 		ECA7A3271E94CEDD0000114D /* RCSUnitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3261E94CEDD0000114D /* RCSUnitTextField.swift */; };
+		ECA7A3291E94E8EC0000114D /* RCSQuantityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3281E94E8EC0000114D /* RCSQuantityTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		ECA7A31E1E94CEA20000114D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA7A3201E94CEA20000114D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECA7A3261E94CEDD0000114D /* RCSUnitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSUnitTextField.swift; sourceTree = "<group>"; };
+		ECA7A3281E94E8EC0000114D /* RCSQuantityTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSQuantityTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		ECA7A3131E94CEA20000114D /* unitTextField */ = {
 			isa = PBXGroup;
 			children = (
+				ECA7A3281E94E8EC0000114D /* RCSQuantityTextField.swift */,
 				ECA7A3261E94CEDD0000114D /* RCSUnitTextField.swift */,
 				ECA7A3141E94CEA20000114D /* AppDelegate.swift */,
 				ECA7A3161E94CEA20000114D /* ViewController.swift */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECA7A3271E94CEDD0000114D /* RCSUnitTextField.swift in Sources */,
+				ECA7A3291E94E8EC0000114D /* RCSQuantityTextField.swift in Sources */,
 				ECA7A3171E94CEA20000114D /* ViewController.swift in Sources */,
 				ECA7A3151E94CEA20000114D /* AppDelegate.swift in Sources */,
 			);
