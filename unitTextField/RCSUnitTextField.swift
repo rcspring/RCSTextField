@@ -14,56 +14,50 @@ protocol RCSUnitTextFieldDelegate {
 }
 
 
-class RCSUnitTextField : UITextField, UITextFieldDelegate {
+class RCSUnitTextField : RCSTextField {
     
     var measUnit : Unit = UnitMass.kilograms {
         didSet {
             zeroMeasurement()
         }
     }
-    var dismissButtonColor = UIColor.blue
-    var unitDelegate : RCSUnitTextFieldDelegate?
-    var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
-    public private(set) var measurement : Measurement<Unit> 
-        
+//    var dismissButtonColor = UIColor.blue
+//    var unitDelegate : RCSUnitTextFieldDelegate?
+//    var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
+//    public private(set) var measurement : Measurement<Unit>
+    
     private var unitString : String
     private var suffixString : String
-    static let nForm = NumberFormatter()
+//    static let nForm = NumberFormatter()
 
     required init?(coder aDecoder: NSCoder) {
         unitString = measUnit.symbol
         suffixString = " " + unitString
-        measurement = Measurement(value: 0.0, unit: measUnit)
-    
+
         super.init(coder: aDecoder)
-        
-        super.keyboardType = .decimalPad
-        super.textAlignment = .right
-        
-        
+        value = .measurment(Measurement(value: 0.0, unit: measUnit))
         
         text = text! + suffixString
-        super.delegate = self
     }
     
-    override var delegate: UITextFieldDelegate? {
-        get {
-            return nil
-        }
-        set {}
-    }
-    
-    
-    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
-        switch action {
-        case #selector(UIResponderStandardEditActions.cut(_:)):
-            return false
-        case #selector(UIResponderStandardEditActions.paste(_:)):
-            return false
-        default:
-            return super.canPerformAction(action, withSender: sender)
-        }
-    }
+//    override var delegate: UITextFieldDelegate? {
+//        get {
+//            return nil
+//        }
+//        set {}
+//    }
+//    
+//    
+//    override func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+//        switch action {
+//        case #selector(UIResponderStandardEditActions.cut(_:)):
+//            return false
+//        case #selector(UIResponderStandardEditActions.paste(_:)):
+//            return false
+//        default:
+//            return super.canPerformAction(action, withSender: sender)
+//        }
+//    }
 
     //MARK:- TextField Delegate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -79,14 +73,7 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
         
         let newString = (textL as NSString).replacingCharacters(in: range, with: string)
         
-        setMeasurement(value:newString)
-        return true
-    }
-    
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        super.inputAccessoryView = dismissButton()
-        
+        setMeasurement(string:newString)
         return true
     }
     
@@ -95,58 +82,31 @@ class RCSUnitTextField : UITextField, UITextFieldDelegate {
         textField.selectedTextRange = pointRangeFromEnd(offset: -suffixString.characters.count)
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        unitDelegate?.textFieldDidComplete(field:self)
-    }
-    
     //MARK:- Private Methods
     private func pointRangeFromEnd(offset offsetVal:Int)->UITextRange? {
         let endPos = position(from: endOfDocument, offset: offsetVal)!
         return textRange(from: endPos, to: endPos)
     }
     
-    private func dismissButton()->UIView {
-        let button = UIButton()
-        button.setTitle(dismissButtonText, for: .normal)
-        button.addTarget(self, action: #selector(RCSUnitTextField.buttonPushed(_:)), for: .touchUpInside)
-        button.frame = CGRect(x: 0, y: 0, width: 375, height: 50)
-        button.backgroundColor = dismissButtonColor
-        
-        let view = UIView()
-        view.bounds = CGRect(x: 0, y: 0, width: 375, height: 50)
-        view.addSubview(button)
-        
-        return view
-    }
+    private func setMeasurement(string quantityString:String) {
     
-    @objc private func buttonPushed(_ sender: Any) {
-        self.resignFirstResponder()
-    }
-    
-    private func setMeasurement(value:String?) {
-        guard let textL = value  else {
-            measurement = Measurement(value: 0.0, unit: measUnit)
-            return
-        }
-        
-        
-        let suffixBeginIdx = textL.characters.index(textL.endIndex, offsetBy: -suffixString.characters.count)
-        let measurementQuantity = textL.substring(to: suffixBeginIdx)
+        let suffixBeginIdx = quantityString.characters.index(quantityString.endIndex, offsetBy: -suffixString.characters.count)
+        let measurementQuantity = quantityString.substring(to: suffixBeginIdx)
         
         if measurementQuantity.characters.count == 0 {
-            measurement = Measurement(value: 0.0, unit: measUnit)
+            value = .measurment(Measurement(value: 0.0, unit: measUnit))
             return
         }
         
         let number = RCSUnitTextField.nForm.number(from: measurementQuantity)!
-        measurement = Measurement(value: number.doubleValue, unit: measUnit)
-        unitDelegate?.textFieldValueDidChange(field: self )
+        value = .measurment(Measurement(value: number.doubleValue, unit: measUnit))
+        valueDelegate?.fieldValueDidChange(field: self)
     }
     
     private func zeroMeasurement() {
         unitString = measUnit.symbol
         suffixString = " " + unitString
-        measurement = Measurement(value: 0.0, unit: measUnit)
+        value = .measurment(Measurement(value: 0.0, unit: measUnit))
         
         text = suffixString
     }

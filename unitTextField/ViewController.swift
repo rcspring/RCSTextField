@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, RCSUnitTextFieldDelegate, RCSQuantityTextFieldDelegate {
+class ViewController: UIViewController, RCSTextFieldDelegate {
     
     @IBOutlet var textField : RCSUnitTextField!
     @IBOutlet var quantityField : RCSQuantityTextField!
@@ -16,15 +16,14 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate, RCSQuantityTex
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textField.unitDelegate = self
+        textField.valueDelegate = self 
         textField.measUnit = UnitVolume.milliliters
         textField.dismissButtonText = "Dismiss"
         textField.dismissButtonColor = UIColor.green
-        
-        quantityField.quantityDelegate = self
+//
+        quantityField.valueDelegate = self
         quantityField.dismissButtonText = "Dismiss"
         quantityField.dismissButtonColor = UIColor.red
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,22 +31,13 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate, RCSQuantityTex
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK:- RCSUnitTextFieldDelegate
-    func textFieldDidComplete(field: RCSUnitTextField) {
-        print("Completed with \(field.measurement)")
+    //MARK:- RCSTextFieldDelegate 
+    func fieldDidComplete(field: RCSTextField) {
+        print("QCompleted with \(field.value)")
     }
     
-    func textFieldValueDidChange(field: RCSUnitTextField) {
-         print("Changed with \(field.measurement)")
-    }
-    
-    //MARK:- RCSQuantityTextFieldDelegate 
-    func quantityFieldDidComplete(field: RCSQuantityTextField) {
-        print("QCompleted with \(field.quantity)")
-    }
-    
-    func quantityFieldValueDidChange(field: RCSQuantityTextField) {
-        print("Changed with \(field.quantity)")
+    func fieldValueDidChange(field: RCSTextField) {
+        print("Changed with \(field.value)")
     }
 
 
