@@ -16,21 +16,24 @@ protocol RCSUnitTextFieldDelegate {
 
 class RCSUnitTextField : RCSTextField {
     
-    var measUnit : Unit = UnitMass.kilograms {
+    private var unitString : String
+    private var suffixString : String
+    
+    override var configuration: RCSTextFieldConfiguration {
         didSet {
             zeroMeasurement()
         }
     }
-    
-    private var unitString : String
-    private var suffixString : String
 
     required init?(coder aDecoder: NSCoder) {
-        unitString = measUnit.symbol
-        suffixString = " " + unitString
+        unitString = ""
+        suffixString = " "
 
         super.init(coder: aDecoder)
-        value = .measurment(Measurement(value: 0.0, unit: measUnit))
+        value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
+        
+        unitString = configuration.measUnit.symbol
+        suffixString = " " + unitString
         
         text = text! + suffixString
     }
@@ -69,19 +72,19 @@ class RCSUnitTextField : RCSTextField {
         let measurementQuantity = quantityString.substring(to: suffixBeginIdx)
         
         if measurementQuantity.characters.count == 0 {
-            value = .measurment(Measurement(value: 0.0, unit: measUnit))
+            value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
             return
         }
         
         let number = RCSUnitTextField.nForm.number(from: measurementQuantity)!
-        value = .measurment(Measurement(value: number.doubleValue, unit: measUnit))
+        value = .measurment(Measurement(value: number.doubleValue, unit: configuration.measUnit))
         configuration.valueDelegate?.fieldValueDidChange(field: self)
     }
     
     private func zeroMeasurement() {
-        unitString = measUnit.symbol
+        unitString = configuration.measUnit.symbol
         suffixString = " " + unitString
-        value = .measurment(Measurement(value: 0.0, unit: measUnit))
+        value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
         
         text = suffixString
     }

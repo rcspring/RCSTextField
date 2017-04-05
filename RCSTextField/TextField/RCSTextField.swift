@@ -24,6 +24,7 @@ struct RCSTextFieldConfiguration {
     var quantityDelegate : RCSTextFieldDelegate?
     var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
     var valueDelegate : RCSTextFieldDelegate?
+    var measUnit : Unit = UnitMass.kilograms
 }
 
 class RCSTextField : UITextField, UITextFieldDelegate{

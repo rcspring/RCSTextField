@@ -20,8 +20,8 @@ class ViewController: UIViewController, RCSTextFieldDelegate {
         configuration.dismissButtonColor = UIColor.gray
         configuration.dismissButtonText = "Dismiss"
         configuration.valueDelegate = self
-
-        unitField.measUnit = UnitVolume.milliliters
+        configuration.measUnit = UnitVolume.milliliters
+        
         unitField.configuration = configuration
         quantityField.configuration = configuration
     }

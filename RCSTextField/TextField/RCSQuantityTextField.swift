@@ -29,8 +29,6 @@ class RCSQuantityTextField : RCSTextField {
     }
     
     //MARK:- Private Methods
-
-    
     private func setQuantity(string quantityString:String) {
         if quantityString.characters.count == 0 {
             value = .quantity(0.0)
