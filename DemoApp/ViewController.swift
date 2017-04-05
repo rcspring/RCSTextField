@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RCSTextField
 
 class ViewController: UIViewController, RCSTextFieldDelegate {
     

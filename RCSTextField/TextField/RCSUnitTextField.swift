@@ -8,24 +8,18 @@
 
 import UIKit
 
-protocol RCSUnitTextFieldDelegate {
-    func textFieldDidComplete(field:RCSUnitTextField)
-    func textFieldValueDidChange(field:RCSUnitTextField)
-}
-
-
-class RCSUnitTextField : RCSTextField {
+public class RCSUnitTextField : RCSTextField {
     
     private var unitString : String
     private var suffixString : String
     
-    override var configuration: RCSTextFieldConfiguration {
+    override public var configuration: RCSTextFieldConfiguration {
         didSet {
             zeroMeasurement()
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         unitString = ""
         suffixString = " "
 

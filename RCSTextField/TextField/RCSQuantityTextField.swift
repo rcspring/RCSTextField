@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RCSQuantityTextField : RCSTextField {
+public class RCSQuantityTextField : RCSTextField {
 
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         value = RCSTextFieldValue.quantity(0.0)
     }

@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		EC0060DF1E9593070021F9D3 /* RCSTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0060DD1E9593070021F9D3 /* RCSTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EC0060E21E9593070021F9D3 /* RCSTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0060DB1E9593070021F9D3 /* RCSTextField.framework */; };
-		EC0060E31E9593070021F9D3 /* RCSTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC0060DB1E9593070021F9D3 /* RCSTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC0060EC1E9594080021F9D3 /* RCSQuantityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060E91E9594080021F9D3 /* RCSQuantityTextField.swift */; };
 		EC0060ED1E9594080021F9D3 /* RCSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060EA1E9594080021F9D3 /* RCSTextField.swift */; };
 		EC0060EE1E9594080021F9D3 /* RCSUnitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060EB1E9594080021F9D3 /* RCSUnitTextField.swift */; };
+		EC00611B1E959C0D0021F9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC00611A1E959C0D0021F9D3 /* Main.storyboard */; };
+		EC00611C1E959D8D0021F9D3 /* RCSTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC0060DB1E9593070021F9D3 /* RCSTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EC00611F1E959E150021F9D3 /* RCSTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0060DB1E9593070021F9D3 /* RCSTextField.framework */; };
+		EC0061211E959F4A0021F9D3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0061201E959F4A0021F9D3 /* Launch Screen.storyboard */; };
 		ECA7A3151E94CEA20000114D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3141E94CEA20000114D /* AppDelegate.swift */; };
 		ECA7A3171E94CEA20000114D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3161E94CEA20000114D /* ViewController.swift */; };
-		ECA7A31A1E94CEA20000114D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A3181E94CEA20000114D /* Main.storyboard */; };
 		ECA7A31C1E94CEA20000114D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31B1E94CEA20000114D /* Assets.xcassets */; };
-		ECA7A31F1E94CEA20000114D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31D1E94CEA20000114D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		EC0060E01E9593070021F9D3 /* PBXContainerItemProxy */ = {
+		EC00611D1E959DA50021F9D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ECA7A3091E94CEA20000114D /* Project object */;
 			proxyType = 1;
@@ -37,7 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				EC0060E31E9593070021F9D3 /* RCSTextField.framework in Embed Frameworks */,
+				EC00611C1E959D8D0021F9D3 /* RCSTextField.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,12 +51,12 @@
 		EC0060E91E9594080021F9D3 /* RCSQuantityTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSQuantityTextField.swift; sourceTree = "<group>"; };
 		EC0060EA1E9594080021F9D3 /* RCSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSTextField.swift; sourceTree = "<group>"; };
 		EC0060EB1E9594080021F9D3 /* RCSUnitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSUnitTextField.swift; sourceTree = "<group>"; };
+		EC00611A1E959C0D0021F9D3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EC0061201E959F4A0021F9D3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		ECA7A3111E94CEA20000114D /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA7A3141E94CEA20000114D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA7A3161E94CEA20000114D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ECA7A3191E94CEA20000114D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECA7A31B1E94CEA20000114D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ECA7A31E1E94CEA20000114D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA7A3201E94CEA20000114D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC0060E21E9593070021F9D3 /* RCSTextField.framework in Frameworks */,
+				EC00611F1E959E150021F9D3 /* RCSTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,9 +122,9 @@
 			children = (
 				ECA7A3141E94CEA20000114D /* AppDelegate.swift */,
 				ECA7A3161E94CEA20000114D /* ViewController.swift */,
-				ECA7A3181E94CEA20000114D /* Main.storyboard */,
+				EC00611A1E959C0D0021F9D3 /* Main.storyboard */,
+				EC0061201E959F4A0021F9D3 /* Launch Screen.storyboard */,
 				ECA7A31B1E94CEA20000114D /* Assets.xcassets */,
-				ECA7A31D1E94CEA20000114D /* LaunchScreen.storyboard */,
 				ECA7A3201E94CEA20000114D /* Info.plist */,
 			);
 			path = DemoApp;
@@ -174,7 +174,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				EC0060E11E9593070021F9D3 /* PBXTargetDependency */,
+				EC00611E1E959DA50021F9D3 /* PBXTargetDependency */,
 			);
 			name = DemoApp;
 			productName = unitTextField;
@@ -234,9 +234,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA7A31F1E94CEA20000114D /* LaunchScreen.storyboard in Resources */,
+				EC0061211E959F4A0021F9D3 /* Launch Screen.storyboard in Resources */,
 				ECA7A31C1E94CEA20000114D /* Assets.xcassets in Resources */,
-				ECA7A31A1E94CEA20000114D /* Main.storyboard in Resources */,
+				EC00611B1E959C0D0021F9D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,31 +265,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		EC0060E11E9593070021F9D3 /* PBXTargetDependency */ = {
+		EC00611E1E959DA50021F9D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EC0060DA1E9593070021F9D3 /* RCSTextField */;
-			targetProxy = EC0060E01E9593070021F9D3 /* PBXContainerItemProxy */;
+			targetProxy = EC00611D1E959DA50021F9D3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		ECA7A3181E94CEA20000114D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECA7A3191E94CEA20000114D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		ECA7A31D1E94CEA20000114D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECA7A31E1E94CEA20000114D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC0060E51E9593070021F9D3 /* Debug */ = {
@@ -469,6 +450,7 @@
 				EC0060E61E9593070021F9D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECA7A30C1E94CEA20000114D /* Build configuration list for PBXProject "RCSTextField" */ = {
 			isa = XCConfigurationList;
