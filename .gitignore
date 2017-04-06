@@ -1,0 +1,6 @@
+_Store
+build
+*.xcodeproj/*
+*.xcworkspace/xcuserdata
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata
