@@ -14,7 +14,7 @@ public enum RCSTextFieldValue {
     case nothing
 }
 
-public protocol RCSTextFieldDelegate {
+@objc public protocol RCSTextFieldDelegate {
     func fieldDidComplete(field:RCSTextField)
     func fieldValueDidChange(field:RCSTextField)
 }
@@ -25,10 +25,6 @@ public struct RCSTextFieldConfiguration {
         
     }
     
-    public var dismissButtonColor = UIColor.blue
-    public var quantityDelegate : RCSTextFieldDelegate?
-    public var dismissButtonText = "DISMISS_DEFAULT_BUTTON"
-    public var valueDelegate : RCSTextFieldDelegate?
     public var measUnit : Unit = UnitMass.kilograms
 }
 
@@ -36,6 +32,11 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
 
     public var configuration = RCSTextFieldConfiguration()
     public internal(set) var value : RCSTextFieldValue
+    
+    @IBInspectable public var dismissButtonText : String = "DISMISS_DEFAULT_BUTTON"
+    @IBInspectable public var dismissButtonColor : UIColor = UIColor.blue
+    
+    @IBOutlet public var valueDelegate : RCSTextFieldDelegate?
     
     static let nForm = NumberFormatter()
  
@@ -75,16 +76,17 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     
     
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        configuration.valueDelegate?.fieldDidComplete(field: self)
+        valueDelegate?.fieldDidComplete(field: self)
+        
     }
     
     //MARK:- Private Methods
     private func dismissButton()->UIView {
         let button = UIButton()
-        button.setTitle(configuration.dismissButtonText, for: .normal)
+        button.setTitle(dismissButtonText, for: .normal)
         button.addTarget(self, action: #selector(RCSQuantityTextField.buttonPushed(_:)), for: .touchUpInside)
         button.frame = CGRect(x: 0, y: 0, width: self.window!.bounds.width, height: 50)
-        button.backgroundColor = configuration.dismissButtonColor
+        button.backgroundColor = dismissButtonColor
         
         let view = UIView()
         view.bounds = CGRect(x: 0, y: 0, width: self.window!.bounds.width, height: 50)

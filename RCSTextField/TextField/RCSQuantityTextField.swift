@@ -1,5 +1,5 @@
 //
-//  RCSTextField.swift
+//  RCSQuantityTextField.swift
 //  shopper
 //
 //  Created by Ryan Spring on 3/31/17.
@@ -38,7 +38,7 @@ public class RCSQuantityTextField : RCSTextField {
         let number = RCSQuantityTextField.nForm.number(from: quantityString)!
         value = .quantity(number.doubleValue)
         
-        configuration.valueDelegate?.fieldValueDidChange(field: self)
+        valueDelegate?.fieldValueDidChange(field: self)
     }
     
     private func zeroQuantity() {

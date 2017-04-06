@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Value Delegate-->
         <scene sceneID="V3O-I7-dsG">
             <objects>
                 <viewController id="lNZ-Yg-TTu" customClass="ViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -27,6 +27,15 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dismissButtonColor">
+                                        <color key="value" red="0.43213823439999999" green="0.72347140310000002" blue="0.25086507200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Woof Test"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="valueDelegate" destination="lNZ-Yg-TTu" id="SHk-Dw-GE3"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-kJ-qzo" customClass="RCSQuantityTextField" customModule="RCSTextField">
                                 <rect key="frame" x="16" y="131" width="343" height="30"/>
@@ -34,6 +43,15 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dismissButtonColor">
+                                        <color key="value" red="0.72956335539999995" green="0.90866607430000002" blue="0.39986380929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Woof Test2"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="valueDelegate" destination="lNZ-Yg-TTu" id="sVl-EE-Kv2"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
