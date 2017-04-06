@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kyl-Jz-Zf4" customClass="RCSUnitTextField" customModule="RCSTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kyl-Jz-Zf4" customClass="RCSUnitTextField" customModule="RCSTextField">
                                 <rect key="frame" x="16" y="80" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -31,15 +31,14 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="dismissButtonColor">
                                         <color key="value" red="0.43213823439999999" green="0.72347140310000002" blue="0.25086507200000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Woof Test"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Test1"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="valueDelegate" destination="lNZ-Yg-TTu" id="SHk-Dw-GE3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-kJ-qzo" customClass="RCSQuantityTextField" customModule="RCSTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1DL-kJ-qzo" customClass="RCSQuantityTextField" customModule="RCSTextField">
                                 <rect key="frame" x="16" y="131" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -47,14 +46,40 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="dismissButtonColor">
                                         <color key="value" red="0.72956335539999995" green="0.90866607430000002" blue="0.39986380929999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Woof Test2"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Test2"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="valueDelegate" destination="lNZ-Yg-TTu" id="sVl-EE-Kv2"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LQT-Bt-se5" customClass="RCSTextField" customModule="RCSTextField">
+                                <rect key="frame" x="16" y="182" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="dismissButtonColor">
+                                        <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="dismissButtonText" value="Test3"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="valueDelegate" destination="lNZ-Yg-TTu" id="dxJ-EP-r9R"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kyl-Jz-Zf4" firstAttribute="leading" secondItem="DdP-y3-ZLr" secondAttribute="leadingMargin" id="19t-OU-Odc"/>
+                            <constraint firstItem="1DL-kJ-qzo" firstAttribute="leading" secondItem="DdP-y3-ZLr" secondAttribute="leadingMargin" id="64M-Wj-YIb"/>
+                            <constraint firstItem="LQT-Bt-se5" firstAttribute="top" secondItem="1DL-kJ-qzo" secondAttribute="bottom" constant="21" id="UGq-Kj-R7Q"/>
+                            <constraint firstItem="1DL-kJ-qzo" firstAttribute="trailing" secondItem="DdP-y3-ZLr" secondAttribute="trailingMargin" id="amG-G6-FJ0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LQT-Bt-se5" secondAttribute="trailing" id="bBx-c9-ZSF"/>
+                            <constraint firstItem="Kyl-Jz-Zf4" firstAttribute="trailing" secondItem="DdP-y3-ZLr" secondAttribute="trailingMargin" id="eh0-l9-yaC"/>
+                            <constraint firstItem="1DL-kJ-qzo" firstAttribute="top" secondItem="Kyl-Jz-Zf4" secondAttribute="bottom" constant="21" id="sEa-sv-Vvv"/>
+                            <constraint firstItem="Kyl-Jz-Zf4" firstAttribute="top" secondItem="rl4-iD-3nG" secondAttribute="bottom" constant="60" id="xGf-mP-1Yz"/>
+                            <constraint firstItem="LQT-Bt-se5" firstAttribute="leading" secondItem="DdP-y3-ZLr" secondAttribute="leadingMargin" id="xeW-LF-NDq"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="quantityField" destination="1DL-kJ-qzo" id="RfX-pw-MVj"/>

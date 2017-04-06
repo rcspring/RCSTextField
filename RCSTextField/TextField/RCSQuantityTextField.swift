@@ -12,11 +12,12 @@ public class RCSQuantityTextField : RCSTextField {
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        super.keyboardType = .decimalPad
         value = RCSTextFieldValue.quantity(0.0)
     }
     
     //MARK:- TextField Delegate
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+   override public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let textL = textField.text else {
             return true

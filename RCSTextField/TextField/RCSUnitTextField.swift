@@ -28,12 +28,13 @@ public class RCSUnitTextField : RCSTextField {
         
         unitString = configuration.measUnit.symbol
         suffixString = " " + unitString
+        super.keyboardType = .decimalPad
         
         text = text! + suffixString
     }
     
     //MARK:- TextField Delegate
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    override public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let textL = textField.text else {
             return true

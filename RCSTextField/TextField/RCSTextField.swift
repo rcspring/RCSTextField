@@ -11,6 +11,7 @@ import UIKit
 public enum RCSTextFieldValue {
     case measurment(Measurement<Unit>)
     case quantity(Double)
+    case text(String)
     case nothing
 }
 
@@ -41,10 +42,10 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     static let nForm = NumberFormatter()
  
     public required init?(coder aDecoder: NSCoder) {
-        value = .nothing
+        value = .text("")
         super.init(coder: aDecoder)
         
-        super.keyboardType = .decimalPad
+        
         super.textAlignment = .right
         
         super.delegate = self
@@ -72,6 +73,20 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         super.inputAccessoryView = dismissButton()
         return true
+    }
+    
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textL = text else {
+            return true
+        }
+        
+        let newString = (textL as NSString).replacingCharacters(in: range, with: string)
+        value = .text(newString)
+        
+        valueDelegate?.fieldValueDidChange(field: self)
+        
+        return true 
+        
     }
     
     

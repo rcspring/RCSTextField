@@ -18,9 +18,6 @@ class ViewController: UIViewController, RCSTextFieldDelegate {
         super.viewDidLoad()
         
         var configuration = RCSTextFieldConfiguration()
-       // configuration.dismissButtonColor = UIColor.gray
-//        configuration.dismissButtonText = "Dismiss"
-//        configuration.valueDelegate = self
         configuration.measUnit = UnitVolume.milliliters
         
         unitField.configuration = configuration
@@ -29,7 +26,7 @@ class ViewController: UIViewController, RCSTextFieldDelegate {
 
     //MARK:- RCSTextFieldDelegate 
     func fieldDidComplete(field: RCSTextField) {
-        print("QCompleted with \(field.value)")
+        print("Completed with \(field.value)")
     }
     
     func fieldValueDidChange(field: RCSTextField) {
