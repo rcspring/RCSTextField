@@ -15,9 +15,14 @@ public enum RCSTextFieldValue {
     case nothing
 }
 
-@objc public protocol RCSTextFieldDelegate {
+public protocol RCSTextFieldDelegate : class  {
     func fieldDidComplete(field:RCSTextField)
     func fieldValueDidChange(field:RCSTextField)
+}
+
+extension RCSTextFieldDelegate {
+    func fieldDidComplete(field:RCSTextField) {}
+    func fieldValueDidChange(field:RCSTextField) {}
 }
 
 public struct RCSTextFieldConfiguration {
