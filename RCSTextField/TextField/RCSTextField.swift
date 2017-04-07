@@ -15,12 +15,12 @@ public enum RCSTextFieldValue {
     case nothing
 }
 
-public protocol RCSTextFieldDelegate : class  {
+public protocol RCSTextFieldDelegate : AnyObject {
     func fieldDidComplete(field:RCSTextField)
     func fieldValueDidChange(field:RCSTextField)
 }
 
-extension RCSTextFieldDelegate {
+public extension RCSTextFieldDelegate {
     func fieldDidComplete(field:RCSTextField) {}
     func fieldValueDidChange(field:RCSTextField) {}
 }
@@ -42,7 +42,20 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     @IBInspectable public var dismissButtonText : String = "DISMISS_DEFAULT_BUTTON"
     @IBInspectable public var dismissButtonColor : UIColor = UIColor.blue
     
-    @IBOutlet public var valueDelegate : RCSTextFieldDelegate?
+    @IBOutlet public var valueDelegate : AnyObject? {
+        get {
+            return shadowDelegate
+        }
+        set {
+            if let delegateValue = newValue {
+                shadowDelegate = delegateValue as? RCSTextFieldDelegate
+            }
+            else {
+                shadowDelegate = nil
+            }
+        }
+    }
+    weak var shadowDelegate : RCSTextFieldDelegate?
     
     static let nForm = NumberFormatter()
  
@@ -88,7 +101,7 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
         let newString = (textL as NSString).replacingCharacters(in: range, with: string)
         value = .text(newString)
         
-        valueDelegate?.fieldValueDidChange(field: self)
+        shadowDelegate?.fieldValueDidChange(field: self)
         
         return true 
         
@@ -96,7 +109,7 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     
     
     public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        valueDelegate?.fieldDidComplete(field: self)
+        shadowDelegate?.fieldDidComplete(field: self)
         
     }
     

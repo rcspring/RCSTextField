@@ -39,7 +39,7 @@ public class RCSQuantityTextField : RCSTextField {
         let number = RCSQuantityTextField.nForm.number(from: quantityString)!
         value = .quantity(number.doubleValue)
         
-        valueDelegate?.fieldValueDidChange(field: self)
+        shadowDelegate?.fieldValueDidChange(field: self)
     }
     
     private func zeroQuantity() {
