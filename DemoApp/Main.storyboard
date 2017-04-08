@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Value Delegate-->
+        <!--IBdelegate-->
         <scene sceneID="V3O-I7-dsG">
             <objects>
                 <viewController id="lNZ-Yg-TTu" customClass="ViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,6 +67,17 @@
                                     <outlet property="valueDelegate" destination="lNZ-Yg-TTu" id="dxJ-EP-r9R"/>
                                 </connections>
                             </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fW4-cY-rHv" customClass="RCSUnitSegmentedControl" customModule="RCSTextField">
+                                <rect key="frame" x="16" y="253" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <outlet property="IBdelegate" destination="lNZ-Yg-TTu" id="3uq-rq-0VZ"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

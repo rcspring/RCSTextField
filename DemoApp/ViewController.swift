@@ -9,7 +9,7 @@
 import UIKit
 import RCSTextField
 
-class ViewController: UIViewController, RCSUnitTextFieldDelegate {
+class ViewController: UIViewController, RCSUnitTextFieldDelegate, RCSUnitSegmentedControlDelegate{
     
     @IBOutlet var unitField : RCSUnitTextField!
     @IBOutlet var quantityField : RCSQuantityTextField!
@@ -27,6 +27,13 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate {
         print("Changed with \(field.value)")
     }
 
+    func new(unit: Dimension?, idx: Int, on control: RCSUnitSegmentedControl) {
+        print("New unit \(unit) idx \(idx) on \(control)")
+    }
+    
+    func dataModel() -> [(String, Dimension?)] {
+        return [("Test1",nil),("Test2",nil),("Test3",nil)]
+    }
 
 }
 
