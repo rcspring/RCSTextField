@@ -15,6 +15,10 @@ class ViewController: UIViewController, RCSUnitTextFieldDelegate {
     @IBOutlet var quantityField : RCSQuantityTextField!
 
     //MARK:- RCSTextFieldDelegate 
+    func measUnitForTextField(field:RCSUnitTextField) -> Unit {
+        return UnitVolume.acreFeet
+    }
+    
     func fieldDidComplete(field: RCSTextField) {
         print("Completed with \(field.value)")
     }

@@ -9,12 +9,12 @@
 import UIKit
 
 public protocol RCSUnitTextFieldDelegate : RCSTextFieldDelegate {
-    func measUnitForTextField()->Unit
+    func measUnitForTextField(field:RCSUnitTextField)->Unit
 }
 
 public extension RCSUnitTextFieldDelegate {
     func measUnitForTextField()->Unit {
-        return UnitMass.kilograms
+        return UnitMass.shortTons
     }
 }
 
@@ -58,6 +58,15 @@ public class RCSUnitTextField : RCSTextField {
     }
     
     //MARK:- TextField Delegate
+    override public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if let shadowUnitDelegateL = shadowUnitDelegate {
+            measUnit = shadowUnitDelegateL.measUnitForTextField(field: self)
+        }
+        
+        return super.textFieldShouldBeginEditing(textField)
+    }
+    
+    
     override public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         guard let textL = textField.text else {
