@@ -25,18 +25,8 @@ public extension RCSTextFieldDelegate {
     func fieldValueDidChange(field:RCSTextField) {}
 }
 
-public struct RCSTextFieldConfiguration {
-    
-    public init() {
-        
-    }
-    
-    public var measUnit : Unit = UnitMass.kilograms
-}
-
 public class RCSTextField : UITextField, UITextFieldDelegate{
 
-    public var configuration = RCSTextFieldConfiguration()
     public internal(set) var value : RCSTextFieldValue
     
     @IBInspectable public var dismissButtonText : String = "DISMISS_DEFAULT_BUTTON"
@@ -62,8 +52,6 @@ public class RCSTextField : UITextField, UITextFieldDelegate{
     public required init?(coder aDecoder: NSCoder) {
         value = .text("")
         super.init(coder: aDecoder)
-        
-        
         super.textAlignment = .right
         
         super.delegate = self

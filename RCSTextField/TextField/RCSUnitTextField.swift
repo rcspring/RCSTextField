@@ -8,29 +8,53 @@
 
 import UIKit
 
+public protocol RCSUnitTextFieldDelegate : RCSTextFieldDelegate {
+    func measUnitForTextField()->Unit
+}
+
+public extension RCSUnitTextFieldDelegate {
+    func measUnitForTextField()->Unit {
+        return UnitMass.kilograms
+    }
+}
+
+
 public class RCSUnitTextField : RCSTextField {
     
     private var unitString : String
     private var suffixString : String
     
-    override public var configuration: RCSTextFieldConfiguration {
+    public var measUnit : Unit = UnitMass.kilograms {
         didSet {
             zeroMeasurement()
         }
     }
+    
+    override public var valueDelegate: AnyObject? {
+        get {
+            return self.shadowUnitDelegate
+        }
+        set {
+            if let newValueL = newValue as? RCSUnitTextFieldDelegate{
+                shadowUnitDelegate = newValueL
+            }
+            else {
+                shadowUnitDelegate = nil
+            }
+        }
+    }
+    private var shadowUnitDelegate: RCSUnitTextFieldDelegate?
 
     public required init?(coder aDecoder: NSCoder) {
         unitString = ""
         suffixString = " "
 
         super.init(coder: aDecoder)
-        value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
+        value = .measurment(Measurement(value: 0.0, unit: measUnit))
         
-        unitString = configuration.measUnit.symbol
+        unitString = measUnit.symbol
         suffixString = " " + unitString
         super.keyboardType = .decimalPad
-        
-       // text = text! + suffixString
     }
     
     //MARK:- TextField Delegate
@@ -50,9 +74,7 @@ public class RCSUnitTextField : RCSTextField {
         }
         
         let newString = (textL as NSString).replacingCharacters(in: range, with: string)
-        
-        
-        
+
         setMeasurement(string:newString)
         return true
     }
@@ -66,6 +88,11 @@ public class RCSUnitTextField : RCSTextField {
         textField.selectedTextRange = pointRangeFromEnd(offset: -suffixString.characters.count)
     }
     
+    override public func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        shadowUnitDelegate?.fieldDidComplete(field: self)
+    }
+
+    
     //MARK:- Private Methods
     private func pointRangeFromEnd(offset offsetVal:Int)->UITextRange? {
         let endPos = position(from: endOfDocument, offset: offsetVal)!
@@ -78,22 +105,20 @@ public class RCSUnitTextField : RCSTextField {
         let measurementQuantity = quantityString.substring(to: suffixBeginIdx)
         
         if measurementQuantity.characters.count == 0 {
-            value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
+            value = .measurment(Measurement(value: 0.0, unit: measUnit))
             text = ""
             return
         }
         
         let number = RCSUnitTextField.nForm.number(from: measurementQuantity)!
-        value = .measurment(Measurement(value: number.doubleValue, unit: configuration.measUnit))
-        shadowDelegate?.fieldValueDidChange(field: self)
+        value = .measurment(Measurement(value: number.doubleValue, unit:measUnit))
+        shadowUnitDelegate?.fieldValueDidChange(field: self)
     }
     
     private func zeroMeasurement() {
-        unitString = configuration.measUnit.symbol
+        unitString = measUnit.symbol
         suffixString = " " + unitString
-        value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
+        value = .measurment(Measurement(value: 0.0, unit: measUnit))
     }
-    
-    
 }
 

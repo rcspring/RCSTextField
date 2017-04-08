@@ -9,27 +9,19 @@
 import UIKit
 import RCSTextField
 
-class ViewController: UIViewController, RCSTextFieldDelegate {
+class ViewController: UIViewController, RCSUnitTextFieldDelegate {
     
     @IBOutlet var unitField : RCSUnitTextField!
     @IBOutlet var quantityField : RCSQuantityTextField!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        var configuration = RCSTextFieldConfiguration()
-        configuration.measUnit = UnitVolume.milliliters
-        
-    }
 
     //MARK:- RCSTextFieldDelegate 
     func fieldDidComplete(field: RCSTextField) {
         print("Completed with \(field.value)")
     }
     
-//    func fieldValueDidChange(field: RCSTextField) {
-//        print("Changed with \(field.value)")
-//    }
+    func fieldValueDidChange(field: RCSTextField) {
+        print("Changed with \(field.value)")
+    }
 
 
 }
