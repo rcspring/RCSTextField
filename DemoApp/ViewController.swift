@@ -20,8 +20,6 @@ class ViewController: UIViewController, RCSTextFieldDelegate {
         var configuration = RCSTextFieldConfiguration()
         configuration.measUnit = UnitVolume.milliliters
         
-        unitField.configuration = configuration
-        quantityField.configuration = configuration
     }
 
     //MARK:- RCSTextFieldDelegate 
@@ -29,9 +27,9 @@ class ViewController: UIViewController, RCSTextFieldDelegate {
         print("Completed with \(field.value)")
     }
     
-    func fieldValueDidChange(field: RCSTextField) {
-        print("Changed with \(field.value)")
-    }
+//    func fieldValueDidChange(field: RCSTextField) {
+//        print("Changed with \(field.value)")
+//    }
 
 
 }

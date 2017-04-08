@@ -30,7 +30,7 @@ public class RCSUnitTextField : RCSTextField {
         suffixString = " " + unitString
         super.keyboardType = .decimalPad
         
-        text = text! + suffixString
+       // text = text! + suffixString
     }
     
     //MARK:- TextField Delegate
@@ -40,6 +40,10 @@ public class RCSUnitTextField : RCSTextField {
             return true
         }
         
+        if textL.characters.count == 0 && string.characters.count > 0 {
+            textField.text = suffixString
+        }
+               
         if range.location + range.length > textL.characters.count - suffixString.characters.count {
             textField.selectedTextRange = pointRangeFromEnd(offset: -suffixString.characters.count)
             return false
@@ -47,11 +51,18 @@ public class RCSUnitTextField : RCSTextField {
         
         let newString = (textL as NSString).replacingCharacters(in: range, with: string)
         
+        
+        
         setMeasurement(string:newString)
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if let textL = text, textL.isEmpty {
+            text = suffixString
+        }
+        
         textField.selectedTextRange = pointRangeFromEnd(offset: -suffixString.characters.count)
     }
     
@@ -68,6 +79,7 @@ public class RCSUnitTextField : RCSTextField {
         
         if measurementQuantity.characters.count == 0 {
             value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
+            text = ""
             return
         }
         
@@ -80,8 +92,6 @@ public class RCSUnitTextField : RCSTextField {
         unitString = configuration.measUnit.symbol
         suffixString = " " + unitString
         value = .measurment(Measurement(value: 0.0, unit: configuration.measUnit))
-        
-        text = suffixString
     }
     
     
