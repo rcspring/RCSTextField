@@ -1,0 +1,8 @@
+/* 
+  Localizable.strings
+  RCSTextField
+
+  Created by Ryan Spring on 5/1/17.
+  Copyright © 2017 Ryan Spring. All rights reserved.
+*/
+"DISMISS_DEFAULT_BUTTON" = "Done";

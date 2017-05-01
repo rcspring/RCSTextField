@@ -29,7 +29,7 @@ public class RCSTextField: UITextField, UITextFieldDelegate {
 
     public internal(set) var value: RCSTextFieldValue
 
-    @IBInspectable public var dismissButtonText: String = "DISMISS_DEFAULT_BUTTON"
+    @IBInspectable public var dismissButtonText: String = "DISMISS_DEFAULT_BUTTON".localized
     @IBInspectable public var dismissButtonColor: UIColor = UIColor.blue
 
     @IBOutlet public var valueDelegate: AnyObject? {

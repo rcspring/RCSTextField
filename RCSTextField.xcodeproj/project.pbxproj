@@ -11,14 +11,11 @@
 		EC0060EC1E9594080021F9D3 /* RCSQuantityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060E91E9594080021F9D3 /* RCSQuantityTextField.swift */; };
 		EC0060ED1E9594080021F9D3 /* RCSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060EA1E9594080021F9D3 /* RCSTextField.swift */; };
 		EC0060EE1E9594080021F9D3 /* RCSUnitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060EB1E9594080021F9D3 /* RCSUnitTextField.swift */; };
-		EC00611B1E959C0D0021F9D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC00611A1E959C0D0021F9D3 /* Main.storyboard */; };
 		EC00611C1E959D8D0021F9D3 /* RCSTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EC0060DB1E9593070021F9D3 /* RCSTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EC00611F1E959E150021F9D3 /* RCSTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0060DB1E9593070021F9D3 /* RCSTextField.framework */; };
-		EC0061211E959F4A0021F9D3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC0061201E959F4A0021F9D3 /* Launch Screen.storyboard */; };
+		EC0D6DA71EB7B65300373CF1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EC0D6DA61EB7B65300373CF1 /* Localizable.strings */; };
+		EC0D6DAA1EB7B75A00373CF1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0D6DA91EB7B75A00373CF1 /* Extensions.swift */; };
 		EC1129651E99770E0096CFD8 /* RCSUnitSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1129641E99770E0096CFD8 /* RCSUnitSegmentedControl.swift */; };
-		ECA7A3151E94CEA20000114D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3141E94CEA20000114D /* AppDelegate.swift */; };
-		ECA7A3171E94CEA20000114D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA7A3161E94CEA20000114D /* ViewController.swift */; };
-		ECA7A31C1E94CEA20000114D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA7A31B1E94CEA20000114D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +49,10 @@
 		EC0060E91E9594080021F9D3 /* RCSQuantityTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSQuantityTextField.swift; sourceTree = "<group>"; };
 		EC0060EA1E9594080021F9D3 /* RCSTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSTextField.swift; sourceTree = "<group>"; };
 		EC0060EB1E9594080021F9D3 /* RCSUnitTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSUnitTextField.swift; sourceTree = "<group>"; };
-		EC00611A1E959C0D0021F9D3 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		EC0061201E959F4A0021F9D3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		EC0D6DA61EB7B65300373CF1 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		EC0D6DA91EB7B75A00373CF1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EC1129641E99770E0096CFD8 /* RCSUnitSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCSUnitSegmentedControl.swift; sourceTree = "<group>"; };
 		ECA7A3111E94CEA20000114D /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ECA7A3141E94CEA20000114D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ECA7A3161E94CEA20000114D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ECA7A31B1E94CEA20000114D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ECA7A3201E94CEA20000114D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +77,10 @@
 		EC0060DC1E9593070021F9D3 /* RCSTextField */ = {
 			isa = PBXGroup;
 			children = (
-				EC1129631E9976D10096CFD8 /* RCSUnitSegmentControl */,
+				EC1129631E9976D10096CFD8 /* UnitSegmentControl */,
 				EC0060E81E9594080021F9D3 /* TextField */,
+				EC0D6DA81EB7B71F00373CF1 /* Util */,
+				EC0D6DA51EB7B62D00373CF1 /* Resources */,
 				EC0060DD1E9593070021F9D3 /* RCSTextField.h */,
 				EC0060DE1E9593070021F9D3 /* Info.plist */,
 			);
@@ -102,18 +97,33 @@
 			path = TextField;
 			sourceTree = "<group>";
 		};
-		EC1129631E9976D10096CFD8 /* RCSUnitSegmentControl */ = {
+		EC0D6DA51EB7B62D00373CF1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EC0D6DA61EB7B65300373CF1 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EC0D6DA81EB7B71F00373CF1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				EC0D6DA91EB7B75A00373CF1 /* Extensions.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		EC1129631E9976D10096CFD8 /* UnitSegmentControl */ = {
 			isa = PBXGroup;
 			children = (
 				EC1129641E99770E0096CFD8 /* RCSUnitSegmentedControl.swift */,
 			);
-			path = RCSUnitSegmentControl;
+			path = UnitSegmentControl;
 			sourceTree = "<group>";
 		};
 		ECA7A3081E94CEA20000114D = {
 			isa = PBXGroup;
 			children = (
-				ECA7A3131E94CEA20000114D /* DemoApp */,
 				EC0060DC1E9593070021F9D3 /* RCSTextField */,
 				ECA7A3121E94CEA20000114D /* Products */,
 			);
@@ -126,19 +136,6 @@
 				EC0060DB1E9593070021F9D3 /* RCSTextField.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		ECA7A3131E94CEA20000114D /* DemoApp */ = {
-			isa = PBXGroup;
-			children = (
-				ECA7A3141E94CEA20000114D /* AppDelegate.swift */,
-				ECA7A3161E94CEA20000114D /* ViewController.swift */,
-				EC00611A1E959C0D0021F9D3 /* Main.storyboard */,
-				EC0061201E959F4A0021F9D3 /* Launch Screen.storyboard */,
-				ECA7A31B1E94CEA20000114D /* Assets.xcassets */,
-				ECA7A3201E94CEA20000114D /* Info.plist */,
-			);
-			path = DemoApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0D6DA71EB7B65300373CF1 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,9 +243,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC0061211E959F4A0021F9D3 /* Launch Screen.storyboard in Resources */,
-				ECA7A31C1E94CEA20000114D /* Assets.xcassets in Resources */,
-				EC00611B1E959C0D0021F9D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +253,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0D6DAA1EB7B75A00373CF1 /* Extensions.swift in Sources */,
 				EC0060ED1E9594080021F9D3 /* RCSTextField.swift in Sources */,
 				EC0060EC1E9594080021F9D3 /* RCSQuantityTextField.swift in Sources */,
 				EC1129651E99770E0096CFD8 /* RCSUnitSegmentedControl.swift in Sources */,
@@ -269,8 +265,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECA7A3171E94CEA20000114D /* ViewController.swift in Sources */,
-				ECA7A3151E94CEA20000114D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
