@@ -1,0 +1,6 @@
+framework module Pods_RCSTextField {
+  umbrella header "Pods-RCSTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

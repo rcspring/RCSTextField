@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97CD1CF93A661370FDBC0C72 /* Pods_RCSTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5CCB02768FB8D39EFEBEE7 /* Pods_RCSTextField.framework */; };
 		EC0060DF1E9593070021F9D3 /* RCSTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = EC0060DD1E9593070021F9D3 /* RCSTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EC0060EC1E9594080021F9D3 /* RCSQuantityTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060E91E9594080021F9D3 /* RCSQuantityTextField.swift */; };
 		EC0060ED1E9594080021F9D3 /* RCSTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0060EA1E9594080021F9D3 /* RCSTextField.swift */; };
@@ -43,6 +44,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		30FD87D50978BFCD1062DE23 /* Pods-RCSTextField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSTextField.release.xcconfig"; path = "Pods/Target Support Files/Pods-RCSTextField/Pods-RCSTextField.release.xcconfig"; sourceTree = "<group>"; };
+		AAFF8122AF66D8E32170833B /* Pods-RCSTextField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RCSTextField.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RCSTextField/Pods-RCSTextField.debug.xcconfig"; sourceTree = "<group>"; };
+		CD5CCB02768FB8D39EFEBEE7 /* Pods_RCSTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RCSTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0060DB1E9593070021F9D3 /* RCSTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RCSTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC0060DD1E9593070021F9D3 /* RCSTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCSTextField.h; sourceTree = "<group>"; };
 		EC0060DE1E9593070021F9D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CD1CF93A661370FDBC0C72 /* Pods_RCSTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF69E0A02676F0D3983C3B40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAFF8122AF66D8E32170833B /* Pods-RCSTextField.debug.xcconfig */,
+				30FD87D50978BFCD1062DE23 /* Pods-RCSTextField.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D645E18531F7D916087F5FB3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD5CCB02768FB8D39EFEBEE7 /* Pods_RCSTextField.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EC0060DC1E9593070021F9D3 /* RCSTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +148,8 @@
 			children = (
 				EC0060DC1E9593070021F9D3 /* RCSTextField */,
 				ECA7A3121E94CEA20000114D /* Products */,
+				BF69E0A02676F0D3983C3B40 /* Pods */,
+				D645E18531F7D916087F5FB3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,10 +180,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EC0060E41E9593070021F9D3 /* Build configuration list for PBXNativeTarget "RCSTextField" */;
 			buildPhases = (
+				AF5E03BA2770565241A7C22E /* [CP] Check Pods Manifest.lock */,
+				EC0D6DAC1EB7BF9200373CF1 /* ShellScript */,
 				EC0060D61E9593070021F9D3 /* Sources */,
 				EC0060D71E9593070021F9D3 /* Frameworks */,
 				EC0060D81E9593070021F9D3 /* Headers */,
 				EC0060D91E9593070021F9D3 /* Resources */,
+				EA969BB1101673BA34C3125E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +201,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ECA7A3231E94CEA20000114D /* Build configuration list for PBXNativeTarget "DemoApp" */;
 			buildPhases = (
+				EC0D6DAB1EB7BF7500373CF1 /* ShellScript */,
 				ECA7A30D1E94CEA20000114D /* Sources */,
 				ECA7A30E1E94CEA20000114D /* Frameworks */,
 				ECA7A30F1E94CEA20000114D /* Resources */,
@@ -248,6 +276,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF5E03BA2770565241A7C22E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA969BB1101673BA34C3125E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RCSTextField/Pods-RCSTextField-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC0D6DAB1EB7BF7500373CF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		EC0D6DAC1EB7BF9200373CF1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EC0060D61E9593070021F9D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -281,6 +368,7 @@
 /* Begin XCBuildConfiguration section */
 		EC0060E51E9593070021F9D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAFF8122AF66D8E32170833B /* Pods-RCSTextField.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -304,6 +392,7 @@
 		};
 		EC0060E61E9593070021F9D3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30FD87D50978BFCD1062DE23 /* Pods-RCSTextField.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;

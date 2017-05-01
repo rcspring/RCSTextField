@@ -27,7 +27,7 @@ public extension RCSTextFieldDelegate {
 
 public class RCSTextField: UITextField, UITextFieldDelegate {
 
-    public internal(set) var value: RCSTextFieldValue
+    public internal(set) var value: RCSTextFieldValue = .text("")
 
     @IBInspectable public var dismissButtonText: String = "DISMISS_DEFAULT_BUTTON".localized
     @IBInspectable public var dismissButtonColor: UIColor = UIColor.blue
@@ -50,11 +50,13 @@ public class RCSTextField: UITextField, UITextFieldDelegate {
     static let nForm = NumberFormatter()
 
     public required init?(coder aDecoder: NSCoder) {
-        value = .text("")
         super.init(coder: aDecoder)
-        super.textAlignment = .right
+        setup()
+    }
 
-        super.delegate = self
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
     }
 
     public override var delegate: UITextFieldDelegate? {
@@ -110,6 +112,11 @@ public class RCSTextField: UITextField, UITextFieldDelegate {
         view.addSubview(button)
 
         return view
+    }
+
+    private func setup() {
+        super.textAlignment = .left
+        super.delegate = self
     }
 
     @objc private  func buttonPushed(_ sender: Any) {

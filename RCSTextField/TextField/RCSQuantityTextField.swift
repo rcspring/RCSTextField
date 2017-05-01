@@ -12,8 +12,12 @@ public class RCSQuantityTextField: RCSTextField {
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        super.keyboardType = .decimalPad
-        value = RCSTextFieldValue.quantity(0.0)
+        setup()
+    }
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
     }
 
     // MARK: TextField Delegate
@@ -44,5 +48,11 @@ public class RCSQuantityTextField: RCSTextField {
 
     private func zeroQuantity() {
         text = ""
+    }
+
+    private func setup() {
+        super.keyboardType = .decimalPad
+        super.textAlignment = .right
+        value = RCSTextFieldValue.quantity(0.0)
     }
 }

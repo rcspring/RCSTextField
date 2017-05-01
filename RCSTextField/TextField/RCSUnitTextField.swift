@@ -20,8 +20,8 @@ public extension RCSUnitTextFieldDelegate {
 
 public class RCSUnitTextField: RCSTextField {
 
-    private var unitString: String
-    private var suffixString: String
+    private var unitString: String = ""
+    private var suffixString: String = " "
 
     public var measUnit: Unit = UnitMass.kilograms {
         didSet {
@@ -44,15 +44,13 @@ public class RCSUnitTextField: RCSTextField {
     private weak var shadowUnitDelegate: RCSUnitTextFieldDelegate?
 
     public required init?(coder aDecoder: NSCoder) {
-        unitString = ""
-        suffixString = " "
-
         super.init(coder: aDecoder)
-        value = .measurment(Measurement(value: 0.0, unit: measUnit))
+        setup()
+    }
 
-        unitString = measUnit.symbol
-        suffixString = " " + unitString
-        super.keyboardType = .decimalPad
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
     }
 
     // MARK: TextField Delegate
@@ -125,5 +123,14 @@ public class RCSUnitTextField: RCSTextField {
         unitString = measUnit.symbol
         suffixString = " " + unitString
         value = .measurment(Measurement(value: 0.0, unit: measUnit))
+    }
+
+    private func setup() {
+        value = .measurment(Measurement(value: 0.0, unit: measUnit))
+
+        unitString = measUnit.symbol
+        suffixString = " " + unitString
+        super.textAlignment = .right
+        super.keyboardType = .decimalPad
     }
 }
