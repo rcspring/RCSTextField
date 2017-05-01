@@ -69,7 +69,8 @@ public class RCSUnitTextField: RCSTextField {
         }
 
         if textL.characters.count == 0 && string.characters.count > 0 {
-            textField.text = suffixString
+            textField.text = string + suffixString
+            setMeasurement(string: string + suffixString)
         }
 
         if range.location + range.length > textL.characters.count - suffixString.characters.count {
@@ -82,6 +83,7 @@ public class RCSUnitTextField: RCSTextField {
         setMeasurement(string:newString)
         return true
     }
+
 
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
