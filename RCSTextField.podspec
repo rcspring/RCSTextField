@@ -20,5 +20,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'RCSTextField/**/*.swift'
-  s.resources = 'RCSTextField/**/*.strings'  
+  s.resources = 'RCSTextField/**/*.strings' 
+  s.dependency 'SnapKit' 
 end
