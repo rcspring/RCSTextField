@@ -84,7 +84,6 @@ public class RCSUnitTextField: RCSTextField {
         return true
     }
 
-
     func textFieldDidBeginEditing(_ textField: UITextField) {
 
         if let textL = text, textL.isEmpty {

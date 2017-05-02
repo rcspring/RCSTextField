@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83C3839D7A918E0DB62478BEABA1E8AF"
+               BlueprintIdentifier = "CE1605F573B0813CE330469F6C5BC6C8"
                BuildableName = "Pods_RCSTextField.framework"
                BlueprintName = "Pods-RCSTextField"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "83C3839D7A918E0DB62478BEABA1E8AF"
+            BlueprintIdentifier = "CE1605F573B0813CE330469F6C5BC6C8"
             BuildableName = "Pods_RCSTextField.framework"
             BlueprintName = "Pods-RCSTextField"
             ReferencedContainer = "container:Pods.xcodeproj">

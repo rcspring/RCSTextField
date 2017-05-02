@@ -7,4 +7,5 @@ target 'RCSTextField' do
 
   # Pods for RCSTextField
   pod 'SwiftLint'
+  pod 'SnapKit'
 end

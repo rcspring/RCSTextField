@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 public enum RCSTextFieldValue {
     case measurment(Measurement<Unit>)
@@ -78,7 +79,9 @@ public class RCSTextField: UITextField, UITextFieldDelegate {
     }
 
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        super.inputAccessoryView = dismissButton()
+        let confirmationView = dismissButton()
+        super.inputAccessoryView = confirmationView
+
         return true
     }
 
@@ -110,6 +113,13 @@ public class RCSTextField: UITextField, UITextFieldDelegate {
         let view = UIView()
         view.bounds = CGRect(x: 0, y: 0, width: self.window!.bounds.width, height: 50)
         view.addSubview(button)
+
+        button.snp.makeConstraints { make in
+            make.left.equalTo(view)
+            make.right.equalTo(view)
+            make.top.equalTo(view)
+            make.bottom.equalTo(view)
+        }
 
         return view
     }
